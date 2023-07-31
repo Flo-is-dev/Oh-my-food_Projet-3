@@ -1,0 +1,29 @@
+// Les fonts
+
+@font-face {
+  font-family: "Roboto";
+  src: url(../styles/fonts/Roboto/Roboto-Light.ttf);
+}
+
+@font-face {
+  font-family: "Shrikhand";
+  src: url(../styles/fonts/Shrikhand/Shrikhand-Regular.ttf);
+}
+
+$font1: "Shrikhand";
+$font2: "roboto";
+
+// Les couleurs
+$color-primary: #9356dc;
+$color-second: #ff79da;
+$color-tert: #99e2d0;
+
+// Settings
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: $color-primary;
+  font-family: "Shrikhand", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+    sans-serif;
+}
