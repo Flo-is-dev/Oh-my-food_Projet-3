@@ -1,8 +1,18 @@
 // Les fonts
 
 @font-face {
-  font-family: "Roboto";
-  src: url(../styles/fonts/Roboto/Roboto-Light.ttf);
+  font-family: "Roboto-300";
+  src: url(../fonts/Roboto/Roboto-Light.ttf);
+}
+
+@font-face {
+  font-family: "Roboto-500";
+  src: url(../fonts/Roboto/Roboto-Medium.ttf);
+}
+
+@font-face {
+  font-family: "Roboto-700";
+  src: url(../fonts/Roboto/Roboto-Bold.ttf);
 }
 
 @font-face {
@@ -11,19 +21,51 @@
 }
 
 $font1: "Shrikhand";
-$font2: "roboto";
+$font2-300: "roboto-300";
+$font2-500: "roboto-500";
+$font2-700: "roboto-700";
 
 // Les couleurs
+$color-white: #fff;
 $color-primary: #9356dc;
 $color-second: #ff79da;
-$color-tert: #99e2d0;
+$color-tert1: #99e2d0;
+$color-tert2: #008766;
+$color-blue1: #89c8fa;
+$color-blue2: #003a68;
+$backgroundExtraLight: #f6f6f6;
+$backgroundLight: #eaeaea;
+$backgroundStrong: #353535;
 
 // Settings
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: $color-primary;
-  font-family: "Shrikhand", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+  list-style: none;
+}
+
+body {
+  font-family: $font2-300, "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
     sans-serif;
+
+  &:before {
+    content: "";
+    z-index: 1000;
+    position: absolute;
+    height: 200%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: $backgroundStrong;
+    animation: animBefore 1.5s ease forwards;
+    animation-delay: 0.15s;
+
+    @keyframes animBefore {
+      to {
+        opacity: 0;
+        pointer-events: none;
+      }
+    }
+  }
 }
