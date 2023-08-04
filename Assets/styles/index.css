@@ -21,6 +21,11 @@
   list-style: none;
 }
 
+textarea:focus,
+input:focus {
+  outline: none;
+}
+
 body {
   font-family: "roboto-300", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
@@ -373,4 +378,14 @@ footer .footer-menu a:nth-child(n+3) {
   footer .footer-menu a:nth-child(n+3) {
     width: 130px;
   }
+}
+header .logo {
+  position: relative;
+}
+header .logo i {
+  position: absolute;
+  top: 50%;
+  left: 17px;
+  transform: translateY(-50%);
+  font-size: 25px;
 }/*# sourceMappingURL=index.css.map */
