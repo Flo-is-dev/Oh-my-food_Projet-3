@@ -50,6 +50,12 @@ input:focus {
   outline: none;
 }
 
+a,
+a:visited {
+  color: #101010;
+  text-decoration: none;
+}
+
 body {
   font-family: $font2-300, "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
     sans-serif;

@@ -26,6 +26,12 @@ input:focus {
   outline: none;
 }
 
+a,
+a:visited {
+  color: #101010;
+  text-decoration: none;
+}
+
 body {
   font-family: "roboto-300", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
@@ -274,30 +280,33 @@ body:before {
   font-size: 17px;
   font-family: "roboto-300";
 }
-.restaurants .restau-card-container .card-menu .card-menu-title img {
-  width: 22px;
-  height: 22px;
-  padding: 1px 0;
+.restaurants .restau-card-container .card-menu .card-menu-title i {
   -o-object-fit: cover;
      object-fit: cover;
   position: absolute;
   top: 23px;
   right: 25px;
-  border-radius: 0px;
+  font-size: 22px;
 }
 .restaurants .restau-card-container .card-menu .card-menu-title input[type=checkbox] {
   display: none;
 }
-.restaurants .restau-card-container .card-menu .card-menu-title input[type=checkbox]:checked + .toggle-heart img {
+.restaurants .restau-card-container .card-menu .card-menu-title input[type=checkbox]:checked + .toggle-heart i {
   opacity: 1;
 }
-.restaurants .restau-card-container .card-menu .card-menu-title .toggle-heart img {
+.restaurants .restau-card-container .card-menu .card-menu-title .toggle-heart i {
   opacity: 0;
   position: absolute;
   top: 23px;
   right: 25px;
   z-index: 10;
-  border-radius: 0px;
+  font-size: 22px;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(#9356dc, #ff79da);
+  cursor: pointer;
+  transition: 0.2s ease-out;
 }
 
 @media screen and (min-width: 1440px) {
@@ -401,11 +410,46 @@ header .logo i {
   margin-top: -50px;
   border-radius: 30px;
 }
-.menu h1 {
+.menu .menu-main-title {
+  display: grid;
+  grid-template-columns: 80% 20%;
+  max-width: 450px;
+  margin: 0 auto;
+}
+.menu .menu-main-title h1 {
   font-size: 28px;
   font-family: "Shrikhand";
   padding-top: 32px;
   text-align: center;
+}
+.menu .menu-main-title .heart-reference-box {
+  position: relative;
+}
+.menu .menu-main-title .heart-reference-box i {
+  position: absolute;
+  top: 55%;
+  right: 50%;
+  font-size: 22px;
+}
+.menu .menu-main-title .heart-reference-box input[type=checkbox] {
+  display: none;
+}
+.menu .menu-main-title .heart-reference-box input[type=checkbox]:checked + .toggle-heart i {
+  opacity: 1;
+}
+.menu .menu-main-title .heart-reference-box .toggle-heart i {
+  opacity: 0;
+  position: absolute;
+  top: 55%;
+  right: 50%;
+  z-index: 10;
+  font-size: 22px;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(#9356dc, #ff79da);
+  cursor: pointer;
+  transition: 0.2s ease-out;
 }
 .menu .menu-card-container {
   display: flex;
@@ -484,4 +528,9 @@ header .logo i {
   width: auto;
   background: url(.././images/Select-button.svg) center/cover;
   border-radius: 0 15px 15px 0;
+}
+
+.menu-button {
+  text-align: center;
+  margin: 40px auto;
 }/*# sourceMappingURL=index.css.map */
