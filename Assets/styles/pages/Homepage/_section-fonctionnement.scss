@@ -1,6 +1,8 @@
 .fonctionnement {
   min-height: 390px;
   //   336px
+  width: 400px;
+  margin: 0 auto;
 
   & h2 {
     font-family: $font2-700;
@@ -75,5 +77,6 @@
   .fonctionnement {
     min-height: auto;
     margin: 50px 180px;
+    width: auto;
   }
 }

@@ -1,5 +1,5 @@
 .restaurants {
-  height: 1226px;
+  max-height: 1226px;
   background-color: $backgroundExtraLight;
 
   & h2 {
@@ -14,6 +14,7 @@
     justify-content: center;
     align-items: center;
     gap: 18px;
+    padding-bottom: 54px;
 
     & .card-menu {
       position: relative;
@@ -78,6 +79,7 @@
         & input[type="checkbox"]:checked + .toggle-heart i {
           opacity: 1;
         }
+
         & .toggle-heart i {
           opacity: 0;
           position: absolute;
@@ -85,13 +87,13 @@
           right: 25px;
           z-index: 10;
           font-size: 22px;
-          //   border-radius: 0px;
           background-clip: text;
           -webkit-background-clip: text;
           color: transparent;
           background-image: linear-gradient($color-primary, $color-second);
           cursor: pointer;
-          transition: 0.2s ease-out;
+          transition: 0.5s ease;
+          transform-origin: 0% 0%;
         }
       }
     }

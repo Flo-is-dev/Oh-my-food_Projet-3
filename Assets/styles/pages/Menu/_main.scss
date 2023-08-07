@@ -1,19 +1,36 @@
-.image-menu {
-  background: url(.././images/restaurants/la-palette-du-gout.jpg) center/cover;
+.image-menu1,
+.image-menu2,
+.image-menu3,
+.image-menu4 {
   height: 275px;
   width: 100%;
 }
 
+.image-menu1 {
+  background: url(.././images/restaurants/la-palette-du-gout.jpg) center/cover;
+}
+
+.image-menu2 {
+  background: url(.././images/restaurants/le-delice-des-sens.jpg) center/cover;
+}
+.image-menu3 {
+  background: url(.././images/restaurants/la-note-enchantee.jpg) center/cover;
+}
+.image-menu4 {
+  background: url(.././images/restaurants/a-la-francaise.jpg) center/cover;
+}
+
 .menu {
   background-color: $backgroundExtraLight;
-  margin-top: -50px;
-  border-radius: 30px;
+  border-radius: 30px 30px 0 0;
+  max-width: 1055px;
+  margin: -50px auto 0;
 
   .menu-main-title {
     // background-color: lightgreen;
     display: grid;
     grid-template-columns: 80% 20%;
-    max-width: 450px;
+    max-width: 350px;
     margin: 0 auto;
 
     & h1 {
@@ -52,13 +69,13 @@
         right: 50%;
         z-index: 10;
         font-size: 22px;
-        //   border-radius: 0px;
         background-clip: text;
         -webkit-background-clip: text;
         color: transparent;
         background-image: linear-gradient($color-primary, $color-second);
         cursor: pointer;
-        transition: 0.2s ease-out;
+        transition: 0.5s ease;
+        transform-origin: 0% 0%;
       }
     }
   }
@@ -103,14 +120,25 @@
       overflow: hidden;
       box-shadow: 0px 4.011494159698486px 15.043103218078613px 0px
         rgba(0, 0, 0, 0.1);
+      opacity: 0;
+      transform: translateX(-100px);
+      animation: animImg 0.8s ease-out forwards;
+      animation-delay: 0.85s;
+
+      @keyframes animImg {
+        to {
+          opacity: 1;
+          transform: translateY(0px);
+        }
+      }
 
       &:hover {
-        grid-template-columns: 83% 1fr;
+        grid-template-columns: calc(100% - 59px) 1fr;
         transition: 0.5s ease;
 
         & .menu-card-right {
           //   visibility: visible;
-          width: auto;
+          width: 59px;
           transition: 5s ease;
 
           //   & i {
@@ -123,7 +151,7 @@
         // background-color: lightcoral;
         width: auto;
         display: grid;
-        grid-template-columns: 90% 1%0;
+        grid-template-columns: 90% 10%;
         align-items: flex-end;
         padding: 15px;
 
@@ -177,5 +205,22 @@
 
 .menu-button {
   text-align: center;
-  margin: 40px auto;
+  margin: auto;
+  padding: 40px 0;
+}
+
+@media screen and (min-width: 750px) {
+  .menu-card {
+    & .menu-card-left {
+      grid-template-columns: 95% 5% !important;
+    }
+  }
+}
+@media screen and (min-width: 1050px) {
+  .image-menu1,
+  .image-menu2,
+  .image-menu3,
+  .image-menu4 {
+    height: 394px;
+  }
 }

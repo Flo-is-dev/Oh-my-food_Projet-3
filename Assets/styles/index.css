@@ -44,7 +44,7 @@ body:before {
   top: 0;
   left: 0;
   background-color: #353535;
-  animation: animBefore 1.5s ease forwards;
+  animation: animBefore 2s ease forwards;
   animation-delay: 0.15s;
 }
 @keyframes animBefore {
@@ -144,16 +144,20 @@ body:before {
   font-size: 16px;
   border-radius: 25px;
   border: none;
-  background: var(--button-gradient, linear-gradient(175deg, #ff79da 0%, #9356dc 100%));
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(175deg, #ff79da 0%, #9356dc 100%);
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
   cursor: pointer;
+  transition: 1s ease-out;
 }
 #btn1:hover {
   background: linear-gradient(0deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.15) 100%), linear-gradient(182deg, #ff79da 0%, #9356dc 100%);
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.35);
 }
 
 .fonctionnement {
   min-height: 390px;
+  width: 400px;
+  margin: 0 auto;
 }
 .fonctionnement h2 {
   font-family: "roboto-700";
@@ -219,10 +223,11 @@ body:before {
   .fonctionnement {
     min-height: auto;
     margin: 50px 180px;
+    width: auto;
   }
 }
 .restaurants {
-  height: 1226px;
+  max-height: 1226px;
   background-color: #f6f6f6;
 }
 .restaurants h2 {
@@ -236,6 +241,7 @@ body:before {
   justify-content: center;
   align-items: center;
   gap: 18px;
+  padding-bottom: 54px;
 }
 .restaurants .restau-card-container .card-menu {
   position: relative;
@@ -306,7 +312,8 @@ body:before {
   color: transparent;
   background-image: linear-gradient(#9356dc, #ff79da);
   cursor: pointer;
-  transition: 0.2s ease-out;
+  transition: 0.5s ease;
+  transform-origin: 0% 0%;
 }
 
 @media screen and (min-width: 1440px) {
@@ -363,7 +370,7 @@ footer .footer-menu a:nth-child(n+3) {
   font-weight: 400;
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 950px) {
   footer {
     max-height: 114px;
     padding: 30px 25px;
@@ -399,21 +406,40 @@ header .logo i {
   font-size: 25px;
 }
 
-.image-menu {
-  background: url(.././images/restaurants/la-palette-du-gout.jpg) center/cover;
+.image-menu1,
+.image-menu2,
+.image-menu3,
+.image-menu4 {
   height: 275px;
   width: 100%;
 }
 
+.image-menu1 {
+  background: url(.././images/restaurants/la-palette-du-gout.jpg) center/cover;
+}
+
+.image-menu2 {
+  background: url(.././images/restaurants/le-delice-des-sens.jpg) center/cover;
+}
+
+.image-menu3 {
+  background: url(.././images/restaurants/la-note-enchantee.jpg) center/cover;
+}
+
+.image-menu4 {
+  background: url(.././images/restaurants/a-la-francaise.jpg) center/cover;
+}
+
 .menu {
   background-color: #f6f6f6;
-  margin-top: -50px;
-  border-radius: 30px;
+  border-radius: 30px 30px 0 0;
+  max-width: 1055px;
+  margin: -50px auto 0;
 }
 .menu .menu-main-title {
   display: grid;
   grid-template-columns: 80% 20%;
-  max-width: 450px;
+  max-width: 350px;
   margin: 0 auto;
 }
 .menu .menu-main-title h1 {
@@ -449,7 +475,8 @@ header .logo i {
   color: transparent;
   background-image: linear-gradient(#9356dc, #ff79da);
   cursor: pointer;
-  transition: 0.2s ease-out;
+  transition: 0.5s ease;
+  transform-origin: 0% 0%;
 }
 .menu .menu-card-container {
   display: flex;
@@ -487,19 +514,29 @@ header .logo i {
   cursor: pointer;
   overflow: hidden;
   box-shadow: 0px 4.0114941597px 15.0431032181px 0px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateX(-100px);
+  animation: animImg 0.8s ease-out forwards;
+  animation-delay: 0.85s;
+}
+@keyframes animImg {
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
 }
 .menu .menu-card-container .menu-card:hover {
-  grid-template-columns: 83% 1fr;
+  grid-template-columns: calc(100% - 59px) 1fr;
   transition: 0.5s ease;
 }
 .menu .menu-card-container .menu-card:hover .menu-card-right {
-  width: auto;
+  width: 59px;
   transition: 5s ease;
 }
 .menu .menu-card-container .menu-card .menu-card-left {
   width: auto;
   display: grid;
-  grid-template-columns: 90% 1% 0;
+  grid-template-columns: 90% 10%;
   align-items: flex-end;
   padding: 15px;
 }
@@ -532,5 +569,20 @@ header .logo i {
 
 .menu-button {
   text-align: center;
-  margin: 40px auto;
+  margin: auto;
+  padding: 40px 0;
+}
+
+@media screen and (min-width: 750px) {
+  .menu-card .menu-card-left {
+    grid-template-columns: 95% 5% !important;
+  }
+}
+@media screen and (min-width: 1050px) {
+  .image-menu1,
+  .image-menu2,
+  .image-menu3,
+  .image-menu4 {
+    height: 394px;
+  }
 }/*# sourceMappingURL=index.css.map */
