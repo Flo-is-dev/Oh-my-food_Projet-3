@@ -37,6 +37,20 @@ $backgroundExtraLight: #f6f6f6;
 $backgroundLight: #eaeaea;
 $backgroundStrong: #353535;
 
+// Création d'une propriété custom pour permettre l'animation du background du button
+
+@property --color-1 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff79da;
+}
+
+@property --color-2 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #9356dc;
+}
+
 // Settings
 * {
   margin: 0;
