@@ -35,4 +35,8 @@
     //   linear-gradient(182deg, $color-second 0%, $color-primary 100%);
     box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.35);
   }
+
+  & a {
+    color: white;
+  }
 }

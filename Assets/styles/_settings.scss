@@ -59,6 +59,10 @@ $backgroundStrong: #353535;
   list-style: none;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 textarea:focus,
 input:focus {
   outline: none;
@@ -73,23 +77,85 @@ a:visited {
 body {
   font-family: $font2-300, "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
     sans-serif;
+}
 
+.layout {
   &:before {
     content: "";
     z-index: 1000;
-    position: absolute;
+    position: fixed;
     height: 200%;
     width: 100%;
     top: 0;
     left: 0;
     background-color: $backgroundStrong;
-    animation: animBefore 2s ease forwards;
+    animation: animBefore 2.5s ease forwards;
     animation-delay: 0.15s;
 
     @keyframes animBefore {
-      to {
+      0%,
+      90% {
+        opacity: 1;
+        pointer-events: none;
+      }
+
+      100% {
         opacity: 0;
         pointer-events: none;
+      }
+    }
+  }
+}
+
+.circle-anim-container {
+  z-index: 1001;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 25px;
+
+  .circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 100px;
+    animation: Jump 1.5s ease forwards;
+    animation-delay: 0.25s;
+
+    &:nth-child(1) {
+      animation-delay: 0.2s;
+      background-color: $color-primary;
+    }
+    &:nth-child(2) {
+      animation-delay: 0.4s;
+      background-color: $color-second;
+    }
+    &:nth-child(3) {
+      animation-delay: 0.6s;
+      background-color: $color-primary;
+    }
+
+    @keyframes Jump {
+      0%,
+      66% {
+        transform: translateY(20px);
+        // filter: blur(0);
+        opacity: 1;
+      }
+
+      33% {
+        transform: translateY(0);
+        // filter: blur(10px);
+        opacity: 0;
+      }
+
+      100% {
+        transform: translateY(0);
+        // filter: blur(10px);
+        opacity: 0;
+        pointer-events: none;
+        z-index: -10;
       }
     }
   }
