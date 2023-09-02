@@ -103,6 +103,7 @@
     }
 
     & .menu-card {
+      transform: translateX(-180px);
       background-color: $color-white;
       border-radius: 15px;
       width: 90%;
@@ -118,6 +119,10 @@
       animation: appa 1.5s cubic-bezier(0.5, 1, 0.79, 1.1) forwards;
 
       @keyframes appa {
+        from {
+          opacity: 0;
+          transform: translateX(-180px);
+        }
         to {
           transform: translateX(0);
           opacity: 1;
